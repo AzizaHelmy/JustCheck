@@ -20,6 +20,9 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            api(libs.koin.android)
+            implementation(libs.koin.compose)
+            implementation(libs.compose.coil)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -64,6 +67,15 @@ android {
     }
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
+        implementation(libs.splash.screen)
+        //lottie dependency
+        implementation(libs.lottie)
+        implementation(libs.lottie.compose)
     }
 }
-
+dependencies {
+    implementation(libs.androidx.navigation.common.ktx)
+    implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.material3.android)
+}
