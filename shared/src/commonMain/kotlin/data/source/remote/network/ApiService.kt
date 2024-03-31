@@ -13,7 +13,7 @@ import org.koin.core.component.KoinComponent
  */
 class ApiService(private val client: HttpClient) : IApiService, KoinComponent {
     override suspend fun getUsers(): RandomUserApiResponse {
-        return tryToExecute(client.get("page=1&results=20&seed=abc"))
+        return tryToExecute(client.get("?page=1&results=20&seed=abc"))
     }
     private suspend inline fun <reified T> tryToExecute(response: HttpResponse): T {
         if (response.status.isSuccess()) {
