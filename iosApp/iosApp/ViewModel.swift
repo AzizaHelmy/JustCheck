@@ -1,9 +1,19 @@
-//
-//  ViewModel.swift
-//  iosApp
-//
-//  Created by Ahmed Khaled on 31/03/2024.
-//  Copyright © 2024 orgName. All rights reserved.
-//
-
 import Foundation
+import Shared
+
+@MainActor
+class ViewModel : ObservableObject {
+    var useCase: GetAllUsersUseCase = DIHelper().createGetAllUsersUseCase
+    
+    @Published var users: [User] = []
+    
+    func observeDataFlow() {
+        Task {
+            do {
+                users = try await useCase.invoke()
+            }catch {
+                debugPrint("Failed to get users with error \(error.localizedDescription)")
+            }
+        }
+    }
+}
