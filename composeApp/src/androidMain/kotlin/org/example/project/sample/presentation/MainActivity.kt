@@ -1,4 +1,4 @@
-package org.example.project
+package org.example.project.sample.presentation
 
 import App
 import android.os.Bundle
