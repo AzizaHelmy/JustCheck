@@ -1,33 +1,29 @@
 import SwiftUI
-import Shared
 
 struct ContentView: View {
-    @State private var showContent = false
-    var body: some View {
-        VStack {
-            Button("Click me!") {
-                withAnimation {
-                    showContent = !showContent
-                }
-            }
-
-            if showContent {
-                VStack(spacing: 16) {
-                    Image(systemName: "swift")
-                        .font(.system(size: 200))
-                        .foregroundColor(.accentColor)
-                    Text("SwiftUI: \(Greeting().greet())")
-                }
-                .transition(.move(edge: .top).combined(with: .opacity))
-            }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .padding()
+    @ObservedObject var viewModel: ViewModel
+    
+    init() {
+        self.viewModel = ViewModel()
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    var body: some View {
+        List(viewModel.users, id: \.self) { user in
+            VStack {
+                Spacer()
+                HStack {
+                    AsyncImage(url: URL(string: user.image))
+                        .frame(width: 50, height: 50)
+                        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)))
+                    VStack(alignment: .leading, content: {
+                        Text("\(user.name)")
+                        Text(user.phone)
+                    })
+                }
+                Spacer()
+            }
+        }.onAppear{
+            self.viewModel.observeDataFlow()
+        }
     }
 }
