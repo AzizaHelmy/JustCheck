@@ -8,7 +8,7 @@ class ViewModel : ObservableObject {
     @Published var users: [User] = []
 
     init(){
-    self.useCase=GetAllUsersUseCase()
+        self.useCase = GetAllUsersUseCase()
     }
     
     func observeDataFlow() {
