@@ -20,3 +20,10 @@ Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-mu
 
 * Ktor for networking
 * Koin for DI
+* Native UI ( swift ui for ios, compose for android )
+* shared business logic
+
+## Screenshots
+<div align="center">
+  <img src="https://github.com/HoneyCakeTeam/BusyBee/assets/31763341/c7fbe380-03c2-4b78-915d-f41976c9244b" alt="Screenshot 1" width="150" style="border: 5px solid #ccc; border-radius: 15px;">
+  <img src="https://github.com/HoneyCakeTeam/BusyBee/assets/31763341/a25aad86-ec8d-41e1-bf5f-4788f5058007" alt="Screenshot 2" width="200" style="border: 5px solid #ccc; border-radius: 15px;">  
