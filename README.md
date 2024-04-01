@@ -18,7 +18,7 @@ Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-mu
 
 ## Technologies Used
 
-* Ktor for networking
+* Ktor-client for networking
 * Koin for DI
 * Native UI ( swift ui for ios, compose for android )
 * shared business logic
