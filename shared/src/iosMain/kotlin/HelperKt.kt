@@ -10,7 +10,3 @@ fun initKoin() {
         modules(appModule())
     }
 }
-
-class DIHelper : KoinComponent {
-    val createGetAllUsersUseCase: GetAllUsersUseCase by inject()
-}
