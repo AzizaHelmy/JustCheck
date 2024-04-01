@@ -3,9 +3,13 @@ import Shared
 
 @MainActor
 class ViewModel : ObservableObject {
-    var useCase: GetAllUsersUseCase = DIHelper().createGetAllUsersUseCase
+    var useCase: GetAllUsersUseCase
     
     @Published var users: [User] = []
+
+    init(){
+        self.useCase = GetAllUsersUseCase()
+    }
     
     func observeDataFlow() {
         Task {
