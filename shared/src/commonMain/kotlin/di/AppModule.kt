@@ -7,6 +7,6 @@ fun appModule() = module {
         networkModule,
         dataSourceModule,
         repositoryModule,
-        useCaseModule,
+       // useCaseModule,
     )
 }
