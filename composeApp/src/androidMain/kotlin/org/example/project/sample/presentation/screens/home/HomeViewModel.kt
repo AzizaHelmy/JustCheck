@@ -10,7 +10,7 @@ import org.example.project.sample.presentation.screens.BaseViewModel
  * Created by Aziza Helmy on 3/28/2024.
  */
 class HomeViewModel(
-    private val productsUseCase: GetAllUsersUseCase,
+    private val usersUseCase: GetAllUsersUseCase,
 ) : BaseViewModel<HomeUiState>(HomeUiState()) {
     init {
         getAllUsers()
@@ -19,7 +19,7 @@ class HomeViewModel(
     private fun getAllUsers() {
         tryToExecute(
             {
-                productsUseCase.invoke()
+                usersUseCase.invoke()
             },
             ::onGetAllUsersSuccess,
             ::onGetAllUsersFail
